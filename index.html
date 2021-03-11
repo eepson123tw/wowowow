@@ -28,24 +28,27 @@
     max-width: 1400px;
     min-width: 375px;
     margin: 0 auto;
-    background-color: seashell;
+    background-color: #fd6c04;
   }
   
   .wrapper {
     width: 100%;
-    height: 1400px;
-    background-color: silver;
+    /* height: 1400px; */
   }
   
   .tiltle {
-    padding-top: 30px;
-    font-size: 5vh;
-    padding-left: 10%;
+    padding-top: 20px;
+    padding-left: 18%;
+    font-size: 3vh;
+    display: inline-block;
+    color: #f8f5Df;
   }
   
   .red {
-    color: pink;
+    color: #fffdfa;
+    font-size: 5vh;
     border-bottom: 7px solid pink;
+    margin-right: 10px;
   }
   
   .swiper-container {
@@ -65,10 +68,12 @@
   
   .area_one {
     display: flex;
-    padding: 10px;
-    background-color: lavender;
-    justify-content: center;
+    flex-direction: column;
+    padding: 30px 10px;
+    background-color: rgba(123, 222, 333, 0.2);
+    align-items: center;
     margin-bottom: 40px;
+    color: #fffDfa;
   }
   
   .area_one:last-child {
@@ -77,15 +82,23 @@
   
   .img {
     width: 300px;
-    height: 200px;
-    background-color: khaki;
     margin-right: 10px;
     margin-bottom: 20px;
   }
   
   .text {
     padding: 20px;
-    background-color: red;
+    font-size: 3vh;
+  }
+  
+  p {
+    line-height: 2;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
   }
 </style>
 
@@ -96,42 +109,48 @@
 <body>
 
   <div class="wrapper">
-    <h1 class="tiltle"><span class="red">我是</span>標題</h1>
+    <h1 class="tiltle"><span class="red">小寶貝</span>生日快樂！！！</h1>
     <div class="swiper-container">
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide" style="background-image:url(./img/IMG_7595.jpeg)"></div>
-        <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)"></div>
-        <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)"></div>
-        <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)"></div>
-        <div class="swiper-slide" style="background-image:url(./images/nature-5.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7700.JPG)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7154.jpeg)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7532.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7177.jpeg)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7267.jpeg)"></div>
+        <div class="swiper-slide" style="background-image:url(./img/IMG_6816.jpeg)"></div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
     </div>
 
-    <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one" style="margin-top: 400px;">
+    <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one" style="margin-top: 500px;">
       <div class="img">
-        <img src="" alt="">
+        <img src="./img/IMG_6500.jpeg" alt="">
       </div>
       <div class="text">
-        <p>12312313</p>
+        <p>沒想到時間過的這麼的快，咻～的一下～又到了妳的生日，這一次沒辦法常常陪伴在妳身邊，我感到非常抱歉ＱＱ</p>
+        <p style="margin-top: 10px;">希望我快快面試上公司，找到好工作，帶妳出國遊玩、吃好料！！</p>
       </div>
     </div>
     <div data-aos="fade-down" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one">
       <div class="img">
-        <img src="" alt="">
+        <img src="./img/IMG_6827.JPG" alt="">
       </div>
       <div class="text">
-        <p>123123</p>
+        <p>謝謝妳對我任性時的包容與忍耐，希望之後的旅程，我們也能開開心心地走下去～</p>
+        <p>最😍你了～本來是想做一個我們的主題網站的，但我能用的時間真的太少了😭</p>
+        <p>還記得去年我們一起去吃牛排，最近又想吃了！！ 我們四月一起去吃起來～ </p>
       </div>
     </div>
     <div data-aos="zoom-out-right" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one">
       <div class="img">
-        <img src="" alt="">
+        <img src="./img/IMG_7159.jpeg" alt="">
       </div>
       <div class="text">
-        <p>12312313</p>
+        <p>我還記得這一年每一個感動的時刻，妳的每一個笑容！！</p>
+        <p>今年也要幸福地跟小寶貝過每一天</p>
+        <p>然後也要繼續拍吃飯的照片呦ＸＤ</p>
       </div>
     </div>
   </div>
@@ -161,10 +180,10 @@
     var swiper = new Swiper('.swiper-container', {
       effect: 'cube',
       grabCursor: true,
-      // autoplay: {
-      //   delay: 2500,
-      //   disableOnInteraction: false,
-      // },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       cubeEffect: {
         shadow: true,
         slideShadows: true,
