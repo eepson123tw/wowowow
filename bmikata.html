@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+  <script>
+    let bmiHistoryData = [];
+
+
+    const createObj = (bmi, context) => {
+
+      const bmiStatesData = {
+        "overThin": {
+          "state": "過輕",
+          "color": "藍色"
+        },
+        "normal": {
+          "state": "正常",
+          "color": "紅色"
+        },
+        "overWeight": {
+          "state": "過重",
+          "color": "澄色"
+        },
+        "mildFat": {
+          "state": "輕度肥胖",
+          "color": "黃色"
+        },
+        "moderateFat": {
+          "state": "中度肥胖",
+          "color": "黑色"
+        },
+        "severeFat": {
+          "state": "重度肥胖",
+          "color": "綠色"
+        },
+      };
+
+      return {
+        bmiNum: bmi,
+        color: bmiStatesData[context].color,
+        state: bmiStatesData[context].state,
+        console() {
+          console.log(`您的體重${this.state}, 健康指數為${this.color}`);
+        },
+      }
+
+    };
+
+    const printBmi = (height, weight) => {
+
+      let bmi = (weight / (height / 100 * height / 100));
+      bmi = bmi.toFixed(2);
+      bmi = bmi * 1;
+      let context;
+      let bmiAlert;
+      if (bmi < 18.5) {
+        context = "overThin";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+      } else if (18.5 <= bmi && bmi < 24) {
+        context = "normal";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+
+      } else if (24 <= bmi && bmi < 27) {
+        context = "overWeight";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+      } else if (27 <= bmi && bmi < 30) {
+        context = "mildFat";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+      } else if (30 <= bmi && bmi < 35) {
+        context = "moderateFat";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+      } else if (bmi >= 35) {
+        context = "severeFat";
+        bmiAlert = createObj(bmi, context);
+        bmiAlert.console();
+      } else if (typeof(height) == 'string' || typeof(weight) == 'string') {
+        console.log(`您的數值輸入錯誤，請重新輸入`);
+        return;
+      }
+
+      bmiHistoryData.push(bmiAlert);
+
+    };
+
+    const showHistoryData = (array) => {
+      let totalNum = array.length;
+      let lastNum = parseInt(array.length) - 1;
+      console.log(`您總共計算 ${totalNum} 次 BMI ,最後一次 BMI 指數為 ${array[lastNum]['bmiNum']},體重${array[lastNum]['state']},健康顏色為${array[lastNum]['color']}!!`);
+    };
+
+
+
+    printBmi(178, 20)
+    printBmi(178, 70)
+    printBmi(178, 85)
+    printBmi(178, 90)
+    printBmi(178, 110)
+    printBmi(178, 130)
+    printBmi("身高", "體重")
+    showHistoryData(bmiHistoryData);
+  </script>
+
+
+
+</body>
+
+</html>

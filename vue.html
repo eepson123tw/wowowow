@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<style>
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    ;
+  }
+</style>
+
+
+
+<body>
+
+  <div id="app">
+
+    <!-- <p>{{xx103('班代')}}</p> -->
+
+    <p v-for="item of 20" v-if="score">123</p>
+
+    <img src="./IMG_7595.jpeg" alt="">
+
+  </div>
+
+
+
+  <script>
+    var message = '123';
+
+
+    function say() {
+
+      console.log(message);
+
+      var message = "20";
+      console.log(message);
+
+    }
+
+    say();
+  </script>
+
+
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js' integrity='sha512-YXLGLsQBiwHPHLCAA9npZWhADUsHECjkZ71D1uzT2Hpop82/eLnmFb6b0jo8pK4T0Au0g2FETrRJNblF/46ZzQ==' crossorigin='anonymous'></script>
+
+  <script>
+    new Vue({
+
+      // el: '#app',
+
+      // data: {
+
+      //   message: '123',
+      //   // score: 100,
+
+
+      // },
+      // methods: {
+
+      //   DD103(member) {
+
+      //     return `xx103:${member}`;
+
+
+      //   }
+
+
+
+      // },
+      // beforeCreate() {
+      //   console.log(this.message);
+      // },
+      // created() {
+      //   console.log(this.message);
+      // }
+
+
+
+
+
+
+
+
+    })
+  </script>
+
+
+
+
+
+</body>
+
+</html>

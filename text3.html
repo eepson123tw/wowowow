@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+  <script>
+    let food = [{
+      foodName: '鍋燒意麵',
+      price: 70
+    }, {
+      foodName: '炒麵',
+      price: 65
+    }, {
+      foodName: '蘿蔔泥',
+      price: 20
+    }, {
+      foodName: '荷包蛋',
+      price: 10
+    }];
+
+    let target1, target2;
+
+
+    target1 = food.filter((food) => {
+
+      return food.foodName == '鍋燒意麵' || food.foodName == '炒麵';
+
+    })
+
+    target2 = food.filter((food, index) => {
+
+      return index == 2 || index == 3
+
+    })
+
+
+
+
+
+
+    console.log(target1);
+    console.log(target2);
+
+
+
+
+
+
+    let arr = [1, 4, 9, 16];
+    let newArr;
+
+
+
+
+
+    newArr = arr.map(item => item);
+
+    console.log(arr);
+    console.log(newArr);
+
+
+
+    let customer = [{
+      Name: 'Jordan',
+      id: 123,
+    }, {
+      Name: 'Jenny',
+      id: 456,
+    }, {
+      Name: 'Kevin',
+      id: 789,
+    }, {
+      Name: 'louis',
+      id: 987,
+    }];
+
+    let customerName;
+    let customerId;
+
+
+
+
+
+    customerName = customer.map(name => name.Name)
+
+    customerId = customer.map(name => name.id)
+
+
+
+
+    console.log(customerName);
+    console.log(customerId);
+  </script>
+
+
+
+
+</body>
+
+</html>

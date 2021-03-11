@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    let ProductInfo = {
+      Price: 1000, // 購買價格
+      coupons: [{
+        due_date: "2021-10-15",
+        id: 123,
+        is_enabled: 0,
+        percent: 0.7,
+        title: "特惠七折",
+      }, {
+        due_date: "2021-08-08",
+        id: 456,
+        is_enabled: 1,
+        percent: 0.5, // 折扣比例
+        title: "特惠五折",
+      }]
+    }
+
+    /* 請取得 coupons 陣列中 id 為 456 的 percent，並賦值給 discountPercent */
+    let discountPercent;
+
+
+    let newData = ProductInfo['coupons'].filter((item) => {
+      return item.percent == 0.5
+    }).map((item) => {
+
+      return item.percent;
+
+    });
+
+    discountPercent = newData[0].toString();
+
+
+    console.log(discountPercent);
+
+
+
+    /* 請取得 coupons 陣列中 id 為 456 的 title，並賦值給 title */
+    let title;
+
+    title = ProductInfo['coupons'].filter((item) => {
+      return item.id == 456;
+    }).map((item) => {
+
+      return {
+        discountOn: true,
+        discountCupon: 0.5,
+        title: item.title,
+        price: 1000,
+      }
+
+    });
+
+
+
+    /* 請取得 coupons 陣列中 id 為 456 的 is_enabled，並填入以下 if 判斷式中;
+    如果判斷為 true，則對「購買價格」進行折扣*/
+
+    // if ( /* 程式碼撰寫處 */ ) {
+    //   /* 程式碼撰寫處，對「購買價格」進行折扣*/
+    //   console.log(`優惠券已啟用，${title}`);
+    // } else {
+    //   console.log("優惠券未啟用");
+    // }
+
+    // console.log(`購買價格 ${ProductInfo.Price}`);
+
+
+    let currentList = 0;
+
+    if (title[currentList][`discountOn`]) {
+
+
+
+      title[currentList]['price'] = title[currentList]['price'] * title[currentList]['discountCupon'];
+      console.log(`優惠券已啟用`)
+
+      console.log(`購買價格: ${title[currentList]['price']}`)
+
+    } else {
+
+      console.log("優惠券未啟用");
+
+    };
+  </script>
+
+
+</body>
+
+</html>

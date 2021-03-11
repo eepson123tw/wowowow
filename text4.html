@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.0/swiper-bundle.min.css' integrity='sha512-T9Nrm9JU37BvYFgjYGVYc8EGnpd3nPDz/NY19X6gsNjb0VHorik8KDBljLHvqWdqz9igNqTBvZY4oCJQer4Xtg==' crossorigin='anonymous' />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.0/swiper-bundle.js' integrity='sha512-Sv6En/LkxULDcyACA1YXev7ZWxYw2cY0/6uCYpTj/rNUrlXSeau+AWeTbeT0oPfMp1Am7Ohn3bmyS9hgGNfJDQ==' crossorigin='anonymous'></script>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  body,
+  html {
+    max-width: 1400px;
+    min-width: 375px;
+    margin: 0 auto;
+    background-color: seashell;
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: 1500px;
+    background-color: silver;
+  }
+  
+  .tiltle {
+    font-size: 5vh;
+    padding-left: 10%;
+  }
+  
+  .red {
+    color: pink;
+    border-bottom: 7px solid pink;
+  }
+  
+  .swiper-container {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    margin-left: -150px;
+    margin-top: -150px;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .area_one {
+    display: flex;
+    padding: 10px;
+    background-color: lavender;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .area_one:last-child {
+    flex-direction: column;
+  }
+  
+  .img {
+    width: 300px;
+    height: 200px;
+    background-color: khaki;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    padding: 20px;
+    background-color: red;
+  }
+</style>
+
+
+
+
+
+<body>
+
+  <div class="wrapper">
+    <h1 class="tiltle"><span class="red">我是</span>標題</h1>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide" style="background-image:url(./img/IMG_7595.jpeg)"></div>
+        <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)"></div>
+        <div class="swiper-slide" style="background-image:url(./images/nature-5.jpg)"></div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one" style="margin-top: 400px;">
+      <div class="img">
+        <img src="" alt="">
+      </div>
+      <div class="text">
+        <p>12312313</p>
+      </div>
+    </div>
+    <div data-aos="flip-left" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one">
+      <div class="img">
+        <img src="" alt="">
+      </div>
+      <div class="text">
+        <p>123123</p>
+      </div>
+    </div>
+    <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" class="area_one">
+      <div class="img">
+        <img src="" alt="">
+      </div>
+      <div class="text">
+        <p>12312313</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script>
+    // $(function() {
+    //     AOS.init();
+    //   })
+    //自定參數呼叫
+    $(function() {
+      AOS.init({
+        offset: 200,
+        duration: 600,
+        delay: 10,
+        easing: 'ease-in-sine',
+
+      });
+    })
+
+
+
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      // autoplay: {
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      // },
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>
